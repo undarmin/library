@@ -1,0 +1,18 @@
+.book {
+    border: 2px solid black;
+}
+
+dialog {
+    position: absolute;
+    top: 50%;
+    height: 12rem;
+}
+
+dialog form {
+    display: flex;
+    flex-direction: column;
+}
+
+dialog form input {
+    display: block;
+}
