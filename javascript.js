@@ -25,6 +25,7 @@ function displayBook(book) {
   const pages = document.createElement("p");
   const read = document.createElement("p");
   const deleteButton = document.createElement("button");
+  const toggleStatus = document.createElement("button");
 
   name.classList.add("book-title");
   author.classList.add("book-author");
@@ -35,8 +36,15 @@ function displayBook(book) {
   author.textContent = book.author;
   pages.textContent = book.pages;
   read.textContent = book.read ? "Read" : "Not read yet.";
+  toggleStatus.textContent = book.read ? "Mark as unread" : "Mark as read";
 
-  bookContainer.append(name, author, pages, read, deleteButton);
+
+  toggleStatus.addEventListener('click', () => {
+    book.read = !book.read;
+    read.textContent = book.read ? "Read" : "Not read yet.";
+    toggleStatus.textContent = book.read ? "Mark as unread" : "Mark as read";
+  })
+  bookContainer.append(name, author, pages, read, deleteButton, toggleStatus);
   libraryNode.append(bookContainer);
   deleteButton.addEventListener('click', () => {
     libraryNode.removeChild(bookContainer);
