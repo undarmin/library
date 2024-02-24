@@ -67,13 +67,13 @@ formSubmit.addEventListener("click", (e) => {
   let inputs = [...form.children]
   inputs = inputs.map((el) => el.children[1])
   inputs.pop()
-  console.log(inputs);
   let go = true;
   inputs.forEach((input) => {
     if (!input.value) {
       go = false;
     }
   });
+  console.log(inputs, go);
   if (go) {
     console.log(
       inputs[0].value,
@@ -89,6 +89,9 @@ formSubmit.addEventListener("click", (e) => {
     );
     inputs.forEach((input) => {
         input.value = "";
+        if (input.type == "checkbox") {
+            input.value = "off";
+        }
     })
     addBook(book);
     displayBook(library[library.length - 1]);
