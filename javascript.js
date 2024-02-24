@@ -58,6 +58,12 @@ function displayBook(book) {
 const hobbit = new Book("The Hobbit", "J.K. lol", 692, false);
 addBook(hobbit);
 displayBook(hobbit);
+addBook(hobbit);
+displayBook(hobbit);
+addBook(hobbit);
+displayBook(hobbit);
+addBook(hobbit);
+displayBook(hobbit);
 
 addBookButton.addEventListener("click", () => {
   dialog.setAttribute("open", "");
