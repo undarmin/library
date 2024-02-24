@@ -4,6 +4,10 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 .book {
     border: 2px solid black;
 }
